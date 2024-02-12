@@ -14,6 +14,10 @@ switch ($controller) {
     case '404':
         include('views/404.php');
         break;
+    case 'form':
+        include ('actions/form.php');
+        include ('views/form.php');
+        break;
     default:
         http_response_code(404);
         include('views/404.php');
