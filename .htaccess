@@ -1,0 +1,10 @@
+RewriteEngine On
+RewriteBase /
+
+# Если запрос не является существующим файлом или директорией
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+# И если запрос не является пустой строкой (дефолтной страницей)
+RewriteCond %{REQUEST_URI} !^/$
+# То перенаправляем запрос в index.php
+RewriteRule ^(.*)$ index.php?/$1 [L,QSA]
